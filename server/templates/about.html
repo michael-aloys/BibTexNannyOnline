@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block nav_about %}active{% endblock %}
+
+{% block header %}
+  <h1>{% block title %}About{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <p><a href="https://github.com/marcschulder/BibTexNanny">BibTexNanny</a>
+  is a tool to check the consistency of BibTex files, 
+  fix common mistakes and generate simplified versions of a bibliography.
+  This is its online version.
+  </p>
+{% endblock %}
+

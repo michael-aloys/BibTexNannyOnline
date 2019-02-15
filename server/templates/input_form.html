@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block nav_text_documents %}active{% endblock %}
+
+{% block header %}
+  <h1>{% block title %}BibTexNanny{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post" action="/fixer">
+    <label for="bibtex_input">Content of BibTex File</label>
+    <textarea class="form-control" rows="10" name="bibtex_input" placeholder="Copy-Paste your BibTex
+@article{albanie2017stopping,
+    title={Stopping GAN Violence: Generative Unadversarial Networks},
+    author={Albanie, Samuel and Ehrhardt, S{\'e}bastien and Henriques, Jo{\~a}o F},
+    journal={arXiv preprint arXiv:1703.02528},
+    year={2017}
+}">{% if bibtex %}{{ bibtex }}{% endif %}</textarea>
+    
+    <div class="form-check pt-3">
+      <input class="form-check-input" type="checkbox" value="True" id="option_uppercase" name="option_uppercase">
+      <label class="form-check-label" for="option_uppercase">Uppercase all</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="True"  name="option_useful" id="option_useful" disabled>
+      <label class="form-check-label" for="option_uppercase">Do something useful</label>
+    </div>
+    
+    <input type="submit" class="btn btn-success mt-3" value="Check & Fix">
+  </form>  
+{% endblock %}
+
